@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "813F66811E415BF800A7E58B"
-               BuildableName = "iNetwork.app"
-               BlueprintName = "iNetwork"
-               ReferencedContainer = "container:iNetwork.xcodeproj">
+               BuildableName = "iNetwork2.app"
+               BlueprintName = "iNetwork2"
+               ReferencedContainer = "container:iNetwork2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "813F66811E415BF800A7E58B"
-            BuildableName = "iNetwork.app"
-            BlueprintName = "iNetwork"
-            ReferencedContainer = "container:iNetwork.xcodeproj">
+            BuildableName = "iNetwork2.app"
+            BlueprintName = "iNetwork2"
+            ReferencedContainer = "container:iNetwork2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "813F66811E415BF800A7E58B"
-            BuildableName = "iNetwork.app"
-            BlueprintName = "iNetwork"
-            ReferencedContainer = "container:iNetwork.xcodeproj">
+            BuildableName = "iNetwork2.app"
+            BlueprintName = "iNetwork2"
+            ReferencedContainer = "container:iNetwork2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "813F66811E415BF800A7E58B"
-            BuildableName = "iNetwork.app"
-            BlueprintName = "iNetwork"
-            ReferencedContainer = "container:iNetwork.xcodeproj">
+            BuildableName = "iNetwork2.app"
+            BlueprintName = "iNetwork2"
+            ReferencedContainer = "container:iNetwork2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

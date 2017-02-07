@@ -13,10 +13,11 @@
 		813F668D1E415BF800A7E58B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813F668C1E415BF800A7E58B /* Assets.xcassets */; };
 		813F66901E415BF800A7E58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813F668E1E415BF800A7E58B /* LaunchScreen.storyboard */; };
 		813F66981E415CCD00A7E58B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F66971E415CCD00A7E58B /* Reachability.swift */; };
+		8159349D1E4A958F0007F70E /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159349C1E4A958F0007F70E /* Flavor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		813F66821E415BF800A7E58B /* iNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		813F66821E415BF800A7E58B /* iNetwork2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNetwork2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813F66851E415BF800A7E58B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		813F66871E415BF800A7E58B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		813F668A1E415BF800A7E58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		813F668F1E415BF800A7E58B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		813F66911E415BF800A7E58B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813F66971E415CCD00A7E58B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8159349C1E4A958F0007F70E /* Flavor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,7 @@
 		813F66791E415BF800A7E58B = {
 			isa = PBXGroup;
 			children = (
-				813F66841E415BF800A7E58B /* iNetwork */,
+				813F66841E415BF800A7E58B /* iNetwork2 */,
 				813F66831E415BF800A7E58B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +50,33 @@
 		813F66831E415BF800A7E58B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				813F66821E415BF800A7E58B /* iNetwork.app */,
+				813F66821E415BF800A7E58B /* iNetwork2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		813F66841E415BF800A7E58B /* iNetwork */ = {
+		813F66841E415BF800A7E58B /* iNetwork2 */ = {
 			isa = PBXGroup;
 			children = (
 				813F66851E415BF800A7E58B /* AppDelegate.swift */,
 				813F66971E415CCD00A7E58B /* Reachability.swift */,
+				8159349C1E4A958F0007F70E /* Flavor.swift */,
 				813F66871E415BF800A7E58B /* ViewController.swift */,
 				813F66891E415BF800A7E58B /* Main.storyboard */,
 				813F668C1E415BF800A7E58B /* Assets.xcassets */,
 				813F668E1E415BF800A7E58B /* LaunchScreen.storyboard */,
 				813F66911E415BF800A7E58B /* Info.plist */,
 			);
+			name = iNetwork2;
 			path = iNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		813F66811E415BF800A7E58B /* iNetwork */ = {
+		813F66811E415BF800A7E58B /* iNetwork2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 813F66941E415BF800A7E58B /* Build configuration list for PBXNativeTarget "iNetwork" */;
+			buildConfigurationList = 813F66941E415BF800A7E58B /* Build configuration list for PBXNativeTarget "iNetwork2" */;
 			buildPhases = (
 				813F667E1E415BF800A7E58B /* Sources */,
 				813F667F1E415BF800A7E58B /* Frameworks */,
@@ -82,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = iNetwork;
+			name = iNetwork2;
 			productName = iNetwork;
-			productReference = 813F66821E415BF800A7E58B /* iNetwork.app */;
+			productReference = 813F66821E415BF800A7E58B /* iNetwork2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -103,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 813F667D1E415BF800A7E58B /* Build configuration list for PBXProject "iNetwork" */;
+			buildConfigurationList = 813F667D1E415BF800A7E58B /* Build configuration list for PBXProject "iNetwork2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -116,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				813F66811E415BF800A7E58B /* iNetwork */,
+				813F66811E415BF800A7E58B /* iNetwork2 */,
 			);
 		};
 /* End PBXProject section */
@@ -140,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813F66881E415BF800A7E58B /* ViewController.swift in Sources */,
+				8159349D1E4A958F0007F70E /* Flavor.swift in Sources */,
 				813F66861E415BF800A7E58B /* AppDelegate.swift in Sources */,
 				813F66981E415CCD00A7E58B /* Reachability.swift in Sources */,
 			);
@@ -287,7 +292,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		813F667D1E415BF800A7E58B /* Build configuration list for PBXProject "iNetwork" */ = {
+		813F667D1E415BF800A7E58B /* Build configuration list for PBXProject "iNetwork2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				813F66921E415BF800A7E58B /* Debug */,
@@ -296,13 +301,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		813F66941E415BF800A7E58B /* Build configuration list for PBXNativeTarget "iNetwork" */ = {
+		813F66941E415BF800A7E58B /* Build configuration list for PBXNativeTarget "iNetwork2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				813F66951E415BF800A7E58B /* Debug */,
 				813F66961E415BF800A7E58B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iNetwork.xcodeproj">
+      location = "self:/Users/ani/Documents/iNetwork/iNetwork2.xcodeproj">
    </FileRef>
 </Workspace>

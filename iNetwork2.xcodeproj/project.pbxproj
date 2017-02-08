@@ -14,6 +14,7 @@
 		813F66901E415BF800A7E58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813F668E1E415BF800A7E58B /* LaunchScreen.storyboard */; };
 		813F66981E415CCD00A7E58B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F66971E415CCD00A7E58B /* Reachability.swift */; };
 		8159349D1E4A958F0007F70E /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159349C1E4A958F0007F70E /* Flavor.swift */; };
+		8159349F1E4AABF30007F70E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8159349E1E4AABF30007F70E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		813F66911E415BF800A7E58B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		813F66971E415CCD00A7E58B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		8159349C1E4A958F0007F70E /* Flavor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
+		8159349E1E4AABF30007F70E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				813F66971E415CCD00A7E58B /* Reachability.swift */,
 				8159349C1E4A958F0007F70E /* Flavor.swift */,
 				813F66871E415BF800A7E58B /* ViewController.swift */,
+				8159349E1E4AABF30007F70E /* DetailViewController.swift */,
 				813F66891E415BF800A7E58B /* Main.storyboard */,
 				813F668C1E415BF800A7E58B /* Assets.xcassets */,
 				813F668E1E415BF800A7E58B /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				813F66881E415BF800A7E58B /* ViewController.swift in Sources */,
 				8159349D1E4A958F0007F70E /* Flavor.swift in Sources */,
 				813F66861E415BF800A7E58B /* AppDelegate.swift in Sources */,
+				8159349F1E4AABF30007F70E /* DetailViewController.swift in Sources */,
 				813F66981E415CCD00A7E58B /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

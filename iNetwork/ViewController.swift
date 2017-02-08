@@ -19,6 +19,49 @@ class ViewController: UIViewController {
     
     //MARK: - Core Methods
     
+    func fileInDocumentURL(filename: String) -> URL {
+        let docDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        print("\(docDirectory)")
+        return URL(fileURLWithPath: docDirectory).appendingPathComponent(filename)
+    }
+    
+    func fileExistsInDocuments(filename: String) -> Bool {
+        let fileDocumentURL = fileInDocumentURL(filename: filename)
+        let exists = FileManager.default.fileExists(atPath: fileDocumentURL.path)
+        return exists
+    }
+    
+    func imageOnServerURL(filename: String) -> URL {
+        let serverString = "http://\(hostName)/classfiles/images"
+        return URL(fileURLWithPath: serverString).appendingPathComponent(filename)
+    }
+    
+    func getImage(from: String, to: String, reload: IndexPath) {
+        if reachability!.isReachable {
+            let fromURL = URL(string: from)!
+            let request = URLRequest(url: fromURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                guard let recvData = data else {
+                    return
+                }
+                if recvData.count > 0 && error == nil {
+                    if let _ = UIImage(data: recvData) {
+                        do {
+                            try recvData.write(to: self.fileInDocumentURL(filename: to))
+                            DispatchQueue.main.async {
+                                self.flavorTableView.reloadRows(at: [reload], with: .automatic)
+                            }
+                        } catch {
+                            print("Error Writing File")
+                        }
+                    }
+                }
+            })
+            task.resume()
+        }
+    }
+    
     func parseJson(data: Data) {
         do {
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
@@ -44,7 +87,7 @@ class ViewController: UIViewController {
                 self.flavorTableView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
-
+            
         } catch {
             print("JSON Parsing Error")
         }
@@ -93,7 +136,17 @@ class ViewController: UIViewController {
         } else {
             print("Host Not Reachable. Turn on the Internet")
         }
-
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueListToDetail" {
+            let indexPath = flavorTableView.indexPathForSelectedRow!
+            let currentFlavor = masterFlavorArray[indexPath.row]
+            let destVC = segue.destination as! DetailViewController
+            destVC.currentFlavor = currentFlavor
+            flavorTableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     //MARK: - Reachability Methods
@@ -134,18 +187,18 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Life Cycle Methods
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupReachability(hostName: hostName)
         startReachability()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }
 
 extension ViewController :UITableViewDelegate, UITableViewDataSource {
@@ -158,6 +211,14 @@ extension ViewController :UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let currentFlavor = masterFlavorArray[indexPath.row]
         cell.textLabel!.text = currentFlavor.flavorName
+        if fileExistsInDocuments(filename: currentFlavor.flavorImageFileName) {
+            let filename = fileInDocumentURL(filename: currentFlavor.flavorImageFileName).path
+            cell.imageView!.image = UIImage(named: filename)
+        } else {
+            print("Get Image File \(currentFlavor.flavorImageFileName)")
+            let imagePath = imageOnServerURL(filename: currentFlavor.flavorImageFileName).absoluteString
+            getImage(from: imagePath, to: currentFlavor.flavorImageFileName, reload: indexPath)
+        }
         return cell
     }
     

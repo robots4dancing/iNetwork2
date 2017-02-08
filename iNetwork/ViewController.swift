@@ -12,8 +12,10 @@ class ViewController: UIViewController {
     
     let hostName = "www.moveablebytes.com"
     var reachability :Reachability?
+    var masterFlavorArray = [Flavor]()
     
-    @IBOutlet var networkStatusLabel :UILabel!
+    @IBOutlet var flavorTableView       :UITableView!
+    @IBOutlet var networkStatusLabel    :UILabel!
     
     //MARK: - Core Methods
     
@@ -25,9 +27,24 @@ class ViewController: UIViewController {
             for flavorDictionary in flavorsArray {
                 print("Flavor:\(flavorDictionary)")
             }
+            masterFlavorArray.removeAll()
             for flavorDictionary in flavorsArray {
                 print("Flavor:\(flavorDictionary["name"]!)")
+                let id = Int(flavorDictionary["id"] as! String)!
+                let name = flavorDictionary["name"] as! String
+                let filename = flavorDictionary["filename"] as! String
+                let updatedString = flavorDictionary["dateUpdated"] as! String
+                let formatter = DateFormatter()
+                formatter.dateFormat = "YYYY-MM-DD HH:mm:ss"
+                let updated = formatter.date(from: updatedString)!
+                let newFlavor = Flavor(id: id, name: name, imageName: filename, updated: updated)
+                masterFlavorArray.append(newFlavor)
             }
+            DispatchQueue.main.async {
+                self.flavorTableView.reloadData()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+
         } catch {
             print("JSON Parsing Error")
         }
@@ -66,7 +83,7 @@ class ViewController: UIViewController {
     
     //MARK: - Interactivity Methods
     
-    @IBAction func getFilePressed(button: UIButton) {
+    @IBAction func getFilePressed(button: UIBarButtonItem) {
         guard let reach = reachability else {
             return
         }
@@ -129,5 +146,20 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController :UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return masterFlavorArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let currentFlavor = masterFlavorArray[indexPath.row]
+        cell.textLabel!.text = currentFlavor.flavorName
+        return cell
+    }
+    
 }
 
